@@ -42,13 +42,13 @@ var upload = multer({ storage: storage });
 // Helper function to generate dynamic feedback based on score
 function generateFeedback(score, missingSkills) {
     if (score >= 80) {
-        return "Excellent match! Your skills align strongly with the required keywords for this role.";
+        return "Excellent match! Your skills align strongly with the required keywords for {role}.";
     } else if (score >= 60) {
-        return "Good potential. Your profile shows good alignment. Consider highlighting more relevant skills.";
+        return "Good potential. Your profile shows good alignment. Consider highlighting more relevant skills for {role}.";
     } else if (score >= 40) {
-        return "Basic alignment. You meet some core requirements. Focus on bridging the skill gaps.";
+        return "Basic alignment. You meet some core requirements for {role} role. Focus on bridging the skill gaps.";
     } else {
-        return "Low match. A significant gap exists between your resume and the target role's requirements.";
+        return "Low match. A significant gap exists between your resume and the  {role}'s requirements.";
     }
 }
 
@@ -116,7 +116,7 @@ app.post('/api/upload', upload.single('resume'), async function(req, res) {
     await newResume.save();
 
     // 5. Generate Styled HTML Response (Remains the same styled content)
-    var feedback = generateFeedback(score, missingSkills);
+    var feedback = generateFeedback(score, missingSkills,role);
     var filenameDisplay = req.file.originalname;
 
     const skillsFoundList = presentSkills.map(s => 
