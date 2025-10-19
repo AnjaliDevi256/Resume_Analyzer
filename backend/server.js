@@ -40,7 +40,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 // Helper function to generate dynamic feedback based on score
-function generateFeedback(score, missingSkills) {
+function generateFeedback(score, missingSkills,role) {
     if (score >= 80) {
         return `Excellent match! Your skills align strongly with the required keywords for ${role}.`;
     } else if (score >= 60) {
