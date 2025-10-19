@@ -25,9 +25,9 @@ function UploadForm() {
         <label htmlFor="role-select">Target Role</label>
         <select name="role" id="role-select" required>
           <option value="">Select a role</option> {/* Placeholder option */}
-          <option value="fullstack">Fullstack Developer</option>
-          <option value="frontend">Frontend Developer</option>
-          <option value="backend">Backend Developer</option>
+          <option value="fullstack Developer">Fullstack Developer</option>
+          <option value="frontend Developer">Frontend Developer</option>
+          <option value="backend Developer">Backend Developer</option>
           <option value="datascientist">Data Scientist</option>
         </select>
 

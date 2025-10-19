@@ -72,18 +72,18 @@ app.post('/api/upload', upload.single('resume'), async function(req, res) {
     });
 
     // 2. Determine Role and Keywords
-    var role = req.body.role || 'fullstack';
+    var role = req.body.role || 'fullstack Developer';
     var roleDisplay = role.replace(/([a-z])([A-Z])/g, '$1 $2').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     
     var keywords = [];
 
-    if (role === 'fullstack') {
+    if (role === 'fullstack Developer') {
       keywords = ['python', 'javascript', 'react', 'node', 'sql', 'mongodb', 'typescript', 'aws'];
     } else if (role === 'datascientist') {
       keywords = ['python', 'pandas', 'numpy', 'machine learning', 'sql', 'tensorflow', 'r', 'statistics'];
-    } else if (role === 'frontend') {
+    } else if (role === 'frontend Developer') {
       keywords = ['javascript', 'react', 'html', 'css', 'redux', 'typescript', 'tailwind', 'webpack'];
-    } else if (role === 'backend') {
+    } else if (role === 'backend Developer') {
       keywords = ['node', 'express', 'mongodb', 'sql', 'api', 'docker', 'java', 'go'];
     }
 
