@@ -52,12 +52,9 @@ function generateFeedback(score, missingSkills) {
     }
 }
 
-// Home route (Default check - will be overwritten in production)
-app.get('/', function(req, res) {
-  res.send('<h2>Resume Analyzer Backend Running</h2>');
-});
+// REMOVED THE OLD app.get('/') TEST ROUTE HERE
 
-// Upload & analyze resume route
+// Upload & analyze resume route (API ENDPOINT MUST COME FIRST)
 app.post('/api/upload', upload.single('resume'), async function(req, res) {
   try {
     if (!req.file) {
@@ -346,7 +343,7 @@ app.post('/api/upload', upload.single('resume'), async function(req, res) {
   }
 });
 
-// --- STATIC FILE SERVING LOGIC (FOR RENDER DEPLOYMENT) ---
+// --- STATIC FILE SERVING LOGIC (MUST BE THE LAST ROUTE) ---
 if (process.env.NODE_ENV === 'production') {
     // 1. Serve the static assets (JS, CSS, images) from the built React app
     app.use(express.static(path.resolve(__dirname, '..', 'frontend', 'build')));
