@@ -1,0 +1,156 @@
+/*
+ * Professional, Clean, and Modern CSS inspired by the provided image.
+ * Uses soft shadows, rounded corners, and a clean color palette.
+ */
+
+/* =======================================================
+   1. MAIN CONTAINER (The outer card)
+   ======================================================= */
+.upload-container {
+  /* Dimensions and alignment */
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  
+  /* Appearance */
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e0e0e0; /* Very light border */
+  border-radius: 8px; /* Softly rounded corners */
+  /* Subtle, modern shadow for a "lifted" effect */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  
+  /* Typography */
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333333; /* Dark gray text */
+}
+
+/* =======================================================
+   2. HEADER/TITLE
+   ======================================================= */
+.upload-container h2 {
+  font-size: 1.75rem;
+  font-weight: 600; /* Semi-bold */
+  color: #333;
+  margin-bottom: 25px;
+  padding-bottom: 0; /* Remove padding from previous style */
+  border-bottom: none; /* Remove border from previous style */
+}
+
+/* Add a descriptive subtitle element for the form's purpose */
+.upload-container p.subtitle {
+  color: #6c757d; /* Muted gray for secondary text */
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* =======================================================
+   3. INPUT FIELDS (Select and File)
+   ======================================================= */
+
+/* General label style */
+.upload-form label {
+  display: block;
+  font-weight: 500; /* Medium weight */
+  color: #333333;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+/* Style for the select dropdown */
+.upload-form select {
+  width: 100%;
+  padding: 10px 15px;
+  height: 48px; /* Set a consistent height */
+  font-size: 1rem;
+  color: #495057;
+  background-color: #ffffff;
+  /* Soft, light blue border when not focused */
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  
+  /* Transition for a smooth hover/focus effect */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.upload-form select:focus {
+  border-color: #80bdff; /* Brighter blue on focus */
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus ring */
+}
+
+/* =======================================================
+   4. FILE UPLOAD DROPZONE
+   ======================================================= */
+
+.file-dropzone {
+  /* Design to match the image: dashed border, large icon, centered text */
+  border: 2px dashed #a0aec0; /* Muted gray-blue dashed line */
+  border-radius: 6px;
+  padding: 40px 20px;
+  margin-top: 15px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f7fafc; /* Very light background for the drop area */
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Hide the actual file input but keep it accessible/functional */
+.upload-form input[type="file"] {
+    display: none; 
+}
+
+/* Style for the upload icon (you'll need to add a real icon or use text) */
+.file-dropzone .upload-icon {
+  font-size: 2.5rem; /* Large icon size */
+  color: #4c51bf; /* Muted primary color for the icon */
+  margin-bottom: 10px;
+}
+
+.file-dropzone p {
+  margin: 5px 0 0 0;
+  color: #4a5568;
+}
+
+.file-dropzone p.size-limit {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.file-dropzone:hover {
+    background-color: #edf2f7; /* Slightly darker on hover */
+    border-color: #4c51bf;
+}
+
+
+/* =======================================================
+   5. SUBMIT BUTTON
+   ======================================================= */
+.upload-form button[type="submit"] {
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #6eb3f9; /* Soft Blue Primary Color */
+  border: 1px solid #75b6f7;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  
+  /* Custom Icon/Text alignment for the 'Analyze Resume' look */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-form button[type="submit"]:hover {
+  background-color: #0f79e3; /* Slightly darker blue on hover */
+  border-color: #1678da;
+}
+
+/* Style for the button icon (you'll need to use an actual icon library like FontAwesome) */
+.upload-form button[type="submit"] .button-icon {
+    margin-right: 8px;
+}
