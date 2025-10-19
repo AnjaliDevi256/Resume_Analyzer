@@ -42,13 +42,13 @@ var upload = multer({ storage: storage });
 // Helper function to generate dynamic feedback based on score
 function generateFeedback(score, missingSkills) {
     if (score >= 80) {
-        return "Excellent match! Your skills align strongly with the required keywords for {role}.";
+        return `Excellent match! Your skills align strongly with the required keywords for ${role}.`;
     } else if (score >= 60) {
-        return "Good potential. Your profile shows good alignment. Consider highlighting more relevant skills for {role}.";
+        return `Good potential. Your profile shows good alignment. Consider highlighting more relevant skills for ${role}.`;
     } else if (score >= 40) {
-        return "Basic alignment. You meet some core requirements for {role} role. Focus on bridging the skill gaps.";
+        return `Basic alignment. You meet some core requirements for ${role} role. Focus on bridging the skill gaps.`;
     } else {
-        return "Low match. A significant gap exists between your resume and the  {role}'s requirements.";
+        return `Low match. A significant gap exists between your resume and the  ${role}'s requirements.`;
     }
 }
 
