@@ -18,7 +18,7 @@ var app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB Atlas
+// Connect to MongoDB Atlas (Reads MONGO_URI from .env locally or Render env vars)
 mongoose.connect(process.env.MONGO_URI || "mongodb+srv://fallback:uri")
   .then(function() { console.log("Connected to MongoDB Atlas"); })
   .catch(function(err) { console.log("DB Error:", err); });
