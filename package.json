@@ -4,10 +4,10 @@
   "description": "Full-stack Resume Analyzer deployed on a single Render web service.",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "build:render": "cd frontend && npm install && npm run build", 
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "node backend/server.js",
+  "build:render": "npm install --prefix frontend && npm run build --prefix frontend",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "keywords": [
     "express",
     "react",
